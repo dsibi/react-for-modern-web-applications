@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pure React</title>
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <script
+      crossorigin
+      src="https://unpkg.com/react@16/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"
+    ></script>
+    <script>
+      const Book = (props) => {
+        console.log(props);
+        return React.createElement("div", {}, [
+          React.createElement("h2", {}, props.name),
+          React.createElement("p", {}, props.year),
+          React.createElement("span", {}, props.price),
+        ]);
+      };
+
+      const App = () => {
+        return React.createElement("div", {}, [
+          React.createElement(
+            "h1",
+            { id: "hello", className: "class1" },
+            "Hello React!"
+          ),
+          React.createElement(Book, {
+            name: "BlaBlaBla1",
+            year: "BlaBlaBla",
+            price: 2023,
+          }),
+          React.createElement(Book, {
+            name: "BlaBlaBla2",
+            year: "BlaBla",
+            price: 2022,
+          }),
+          React.createElement(Book, {
+            name: "BlaBlaBla3",
+            year: "Bla",
+            price: 2021,
+          }),
+        ]);
+      };
+      ReactDOM.render(
+        React.createElement(App),
+        document.getElementById("root")
+      );
+    </script>
+  </body>
+</html>
