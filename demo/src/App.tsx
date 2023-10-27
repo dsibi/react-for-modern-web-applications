@@ -7,7 +7,7 @@ export interface IApp {
 
 const App = (props: IApp) => {
   return props.isLoading ? (
-    Preloader
+    <Preloader />
   ) : (
     <div>
       <Book name="BlaBlaBla1" subtitle="BlaBlaBla" year={2023}>
