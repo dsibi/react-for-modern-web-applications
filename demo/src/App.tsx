@@ -1,52 +1,27 @@
-import { log } from "console";
 import { Component } from "react";
+import Posts from "./components/Posts";
 
-interface IProps {
-  // name: string;
-}
-
-interface IState {
-  posts: string[];
-  loading: boolean;
-  comments: string[];
-}
-
-class App extends Component<IProps, IState> {
-  timerId: NodeJS.Timer | undefined;
-  constructor(props: IProps) {
+class App extends Component<{}, IPosts> {
+  constructor(props: {}) {
     super(props);
     this.state = {
-      posts: [],
-      loading: true,
-      comments: [],
+      posts: [
+        { id: 1, name: "ID1", cb: this.handleSmth },
+        { id: 2, name: "ID2", cb: this.handleSmth },
+        { id: 3, name: "ID3", cb: this.handleSmth },
+      ],
     };
   }
 
-  componentDidMount(): void {
-    fetch("https://jsonplaceholder.typicode.com/posts").then((response) =>
-      response
-        .json()
-        .then((data) => this.setState({ posts: data, loading: false }))
-    );
-    this.timerId = setInterval(() => {
-      fetch("https://jsonplaceholder.typicode.com/comments").then((response) =>
-        response.json().then((data) => this.setState({ comments: data }))
-      );
-    }, 3000);
-  }
-
-  componentWillUnmount(): void {
-    clearInterval(this.timerId);
-  }
+  handleSmth = (id: number) => {
+    this.setState({ posts: this.state.posts.filter((post) => post.id != id) });
+  };
 
   render() {
+    const { posts } = this.state;
     return (
       <div className="result" style={{ margin: "auto", width: "300px" }}>
-        {this.state.loading ? (
-          <h3>Preloading...</h3>
-        ) : (
-          <h3>{this.state.posts.length} posts has been loaded</h3>
-        )}
+        <Posts posts={posts} />
       </div>
     );
   }

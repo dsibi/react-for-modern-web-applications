@@ -1,4 +1,3 @@
-import { log } from "console";
 import { Component } from "react";
 
 interface IProps {
@@ -45,31 +44,3 @@ class App extends Component<IProps, IState> {
 }
 
 export default App;
-
-// import { Component } from "react";
-
-// interface IState {
-//   count: number;
-// }
-
-// class App extends Component<IState> {
-//   state = {
-//     count: 0,
-//   };
-
-//   handleClick = () => {
-//     this.setState({ count: this.state.count + 1 });
-//   };
-
-//   render() {
-//     return (
-//       <div className="App">
-//         Hi, {this.state.count}
-//         <br />
-//         <button onClick={this.handleClick}>Click here!</button>
-//       </div>
-//     );
-//   }
-// }
-
-// export default App;
