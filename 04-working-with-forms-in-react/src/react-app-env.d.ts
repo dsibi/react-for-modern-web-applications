@@ -20,23 +20,7 @@ interface IFormWithRefState extends IFormState {
   card: string;
 }
 
-interface MyHTMLElement<Type extends string> extends Omit<HTMLElement, "type"> {
-  type: Type;
-}
-
-interface MyInputHTMLElement<Type extends string = "input">
-  extends MyHTMLElement<Type> {
-  foo: number;
-}
-
-interface MyCheckboxHTMLElement extends MyInputHTMLElement<"checkbox"> {
-  bar: string;
-}
-
-const doSomething = (element: MyInputHTMLElement | MyCheckboxHTMLElement) => {
-  if (element.type === "checkbox") {
-    console.log(element.bar);
-  } else {
-    console.log(element.foo);
-  }
-};
+type ChangeEventTypes =
+  | ChangeEvent<HTMLTextAreaElement>
+  | ChangeEvent<HTMLInputElement>
+  | ChangeEvent<HTMLSelectElement>;

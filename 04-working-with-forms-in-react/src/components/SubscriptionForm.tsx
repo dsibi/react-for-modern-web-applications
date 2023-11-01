@@ -17,13 +17,10 @@ class Form extends Component<IFormProps, IFormState> {
       | ChangeEvent<HTMLSelectElement>
   ) => {
     this.setState({
-      [event.target.name]: event.target.value,
-    } as unknown as Pick<IFormState, keyof IFormState>);
-  };
-
-  handleCheckboxChange = (event: ChangeEvent<HTMLInputElement>) => {
-    this.setState({
-      [event.target.name]: event.target.checked,
+      [event.target.name]:
+        event.target.type == "checkbox"
+          ? (event.target as HTMLInputElement).checked
+          : event.target.value,
     } as unknown as Pick<IFormState, keyof IFormState>);
   };
 
@@ -69,7 +66,7 @@ class Form extends Component<IFormProps, IFormState> {
             type="checkbox"
             name="subscription"
             checked={subscription}
-            onChange={this.handleCheckboxChange}
+            onChange={this.handleChange}
           />
           I agree with evrth
         </label>

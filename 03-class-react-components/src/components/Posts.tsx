@@ -4,7 +4,7 @@ function Posts(props: IPosts) {
   return (
     <>
       {props.posts.map((post) => (
-        <Post key={post.id} id={post.id} name={post.name} cb={post.cb} />
+        <Post key={post.name} id={post.id} name={post.name} cb={post.cb} />
       ))}
     </>
   );
