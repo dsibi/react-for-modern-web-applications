@@ -1,4 +1,4 @@
-function Movie(props: IMovieProps) {
+function Movie(props: IMovie) {
   const {
     Title: title,
     Year: year,
