@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/react-for-modern-web-applications/static/css/main.2ed71250.css",
+    "main.js": "/react-for-modern-web-applications/static/js/main.d86701a7.js",
+    "index.html": "/react-for-modern-web-applications/index.html",
+    "main.2ed71250.css.map": "/react-for-modern-web-applications/static/css/main.2ed71250.css.map",
+    "main.d86701a7.js.map": "/react-for-modern-web-applications/static/js/main.d86701a7.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.2ed71250.css",
+    "static/js/main.d86701a7.js"
+  ]
+}
