@@ -12,26 +12,32 @@ class Main extends Component<{}, IMovieList> {
   }
 
   componentDidMount(): void {
-    fetch(`http://www.omdbapi.com/?apikey=${API_KEY}&s=matrix`)
+    fetch(`https://www.omdbapi.com/?apikey=${API_KEY}&s=matrix`)
       .then((response) => response.json())
       .then((data) => this.setState({ movieList: data.Search, loading: false }))
-      .catch(console.error);
+      .catch((error) => {
+        console.error(error);
+        this.setState({ loading: false });
+      });
   }
 
   searchMovie = (filter: ISearchState) => {
     this.setState({ loading: true });
     fetch(
-      `http://www.omdbapi.com/?apikey=${API_KEY}&s=${filter.search}${
+      `https://www.omdbapi.com/?apikey=${API_KEY}&s=${filter.search}${
         filter.type !== "all" ? `&type=${filter.type}` : ""
       }`
     )
       .then((response) => response.json())
       .then((data) => this.setState({ movieList: data.Search, loading: false }))
-      .catch(console.error);
+      .catch((error) => {
+        console.error(error);
+        this.setState({ loading: false });
+      });
   };
 
   render(): ReactNode {
-    const { movieList, loading } = this.state;
+    const { loading } = this.state;
 
     return (
       <main className="container content">
