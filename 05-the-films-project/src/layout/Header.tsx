@@ -3,7 +3,7 @@ function Header() {
     <nav className="#ef6c00 orange darken-3">
       <div className="nav-wrapper">
         <a
-          href="https://dsibi.github.io/react-for-modern-web-applications/"
+          href="https://dsibi.githubc.io/react-for-modern-web-applications/"
           className="brand-logo"
         >
           React Movies
