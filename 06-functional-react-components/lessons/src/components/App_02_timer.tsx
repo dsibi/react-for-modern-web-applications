@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef, MutableRefObject } from "react";
+import { useEffect, useState, useRef } from "react";
 
 function setDefValues() {
   const userCount = localStorage.getItem("count");
