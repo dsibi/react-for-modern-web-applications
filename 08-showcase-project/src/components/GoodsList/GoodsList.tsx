@@ -1,4 +1,5 @@
-import GoodsItem from "./GoodsItem";
+import GoodsItem from "../GoodsItem/GoodsItem";
+import styles from "./GoodsList.module.css";
 
 function GoodsList(props: IGoodsList) {
   const { goodsList } = props;
@@ -7,7 +8,7 @@ function GoodsList(props: IGoodsList) {
     return <h3>Nothing here</h3>;
   }
   return (
-    <div className="goods">
+    <div className={styles.goods}>
       {goodsList.map((item) => (
         <GoodsItem key={item.id} {...item} />
       ))}

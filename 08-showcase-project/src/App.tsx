@@ -1,7 +1,7 @@
 import { Fragment } from "react";
-import Header from "./components/Header";
-import Footer from "./components/Footer";
-import Shop from "./components/Shop";
+import Header from "./components/Header/Header";
+import Footer from "./components/Footer/Footer";
+import Shop from "./components/Shop/Shop";
 
 function App() {
   return (

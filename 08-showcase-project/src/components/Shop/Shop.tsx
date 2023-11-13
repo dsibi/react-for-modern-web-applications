@@ -1,11 +1,13 @@
 import { useEffect, useState } from "react";
-import { API_URL, API_KEY } from "../config";
-import Preloader from "./Preloader";
-import GoodsList from "./GoodsList";
+import { API_URL, API_KEY } from "../../config";
+import Preloader from "../Preloader/Preloader";
+import GoodsList from "../GoodsList/GoodsList";
+import Cart from "../Cart/Cart";
 
 function Shop() {
   const [goods, setGoods] = useState<IGoodsItem[]>([]);
   const [isLoading, setLoading] = useState(true);
+  const [order, setOrder] = useState<IGoodsItem[]>([]);
 
   useEffect(function getGoods() {
     const requestHeaders: HeadersInit = new Headers();
@@ -44,6 +46,7 @@ function Shop() {
 
   return (
     <main className="container content">
+      <Cart quantity={order.length} />
       {!isLoading ? <GoodsList goodsList={goods} /> : <Preloader />}
     </main>
   );

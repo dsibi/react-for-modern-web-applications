@@ -25,3 +25,7 @@ interface IGoodsItem {
 interface IGoodsList {
   goodsList: IGoodsItem[];
 }
+
+interface ICart {
+  quantity: number;
+}
