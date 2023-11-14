@@ -1,5 +1,5 @@
 function GoodsItem(props: IGoodsItem) {
-  const { id, name, description, imageUrl, price } = props;
+  const { id, name, description, imageUrl, price, addToBasket } = props;
 
   return (
     <div className="card">
@@ -11,7 +11,12 @@ function GoodsItem(props: IGoodsItem) {
         <p>{description}</p>
       </div>
       <div className="card-action">
-        <button className="btn">Купить</button>
+        <button
+          className="btn"
+          onClick={() => addToBasket!({ id, name, price })}
+        >
+          Купить
+        </button>
         <span className="right" style={{ fontSize: "1.8 rem" }}>
           {price} руб.
         </span>

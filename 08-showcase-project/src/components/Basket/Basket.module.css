@@ -1,4 +1,4 @@
-.cart {
+.basket {
   position: fixed;
   bottom: 2rem;
   right: 2rem;
@@ -8,10 +8,9 @@
 }
 
 @media (min-width: 767px) {
-  .cart {
+  .basket {
     top: 5rem;
     bottom: unset;
   }
 }
-.cart-quantity {
-}
+
