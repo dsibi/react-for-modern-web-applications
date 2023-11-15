@@ -20,7 +20,6 @@ interface IGoodsItem {
   description: string;
   price: number;
   imageUrl: string;
-  addToBasket?: AddToBasket;
 }
 
 interface IGoodsList {

@@ -1,16 +1,16 @@
+import { useContext } from "react";
 import BasketItem from "../BasketItem/BasketItem";
 import styles from "./BasketList.module.css";
+import { ShopContext } from "../../context";
+import { JSX } from "react/jsx-runtime";
 
-function BasketList({
-  order,
-  handleBasketShow,
-  removeFromBasket,
-  increment,
-  decrement,
-}: IGoodsBasketList) {
-  const totalPrice = order.reduce((sum, item) => {
+function BasketList() {
+  const { order = [], handleBasketShow } = useContext(ShopContext);
+
+  const totalPrice = order.reduce((sum: number, item: { price: number; quantity: number; }) => {
     return sum + item.price * item.quantity;
   }, 0);
+
   return (
     <ul className={styles.basketList}>
       <li
@@ -20,13 +20,10 @@ function BasketList({
         Корзина
       </li>
       {order.length ? (
-        order.map((item) => (
+        order.map((item: JSX.IntrinsicAttributes & IGoodsBasket) => (
           <BasketItem
             key={item.id}
             {...item}
-            removeFromBasket={removeFromBasket}
-            increment={increment}
-            decrement={decrement}
           />
         ))
       ) : (

@@ -1,7 +1,10 @@
-import { useEffect } from "react";
+import { useContext, useEffect } from "react";
 import styles from "./Alert.module.css";
+import { ShopContext } from "../../context";
 
-function Alert({ name = "", closeAlert }:IAlert) {
+function Alert() {
+  const { alertName: name = "", closeAlert } = useContext(ShopContext);
+
   useEffect(() => {
     const timerID = setTimeout(closeAlert, 3000);
     return () => {

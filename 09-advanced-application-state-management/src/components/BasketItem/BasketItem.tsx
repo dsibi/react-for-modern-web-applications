@@ -1,17 +1,8 @@
 import { useContext } from "react";
 import { ShopContext } from "../../context";
 
-function BasketItem({
-  id,
-  name,
-  price,
-  quantity,
-  removeFromBasket,
-  increment,
-  decrement,
-}: IGoodsBasket) {
-  const { example } = useContext(ShopContext);
-  console.log(example);
+function BasketItem({ id, name, price, quantity }: IGoodsBasket) {
+  const { removeFromBasket, increment, decrement } = useContext(ShopContext);
 
   return (
     <>
