@@ -1,7 +1,5 @@
 import styles from "./TemplateName.module.css";
 
-function TemplateName({}) {
+export default function TemplateName({}) {
   return <div className={styles.templateName}>TemplateName Component</div>;
 }
-
-export default TemplateName;
