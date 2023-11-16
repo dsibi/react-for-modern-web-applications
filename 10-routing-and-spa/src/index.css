@@ -11,3 +11,13 @@ body {
   min-height: calc(100vh - 70px - 64px);
   padding: 1.5rem 0;
 }
+
+.card {
+  display: flex;
+  flex-direction: column;
+  color: red;
+}
+
+.card-content {
+  flex-grow: 1;
+}

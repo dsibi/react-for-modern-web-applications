@@ -1,0 +1,11 @@
+.categoryItem {
+  .card {
+    display: flex;
+    flex-direction: column;
+    color: red;
+  }
+
+  .card-content {
+    flex-grow: 1;
+  }
+}
