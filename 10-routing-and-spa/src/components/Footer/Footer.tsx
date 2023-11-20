@@ -9,10 +9,10 @@ export default function Footer({}) {
           © {new Date().getFullYear()} Copyright Text
           <a
             className="grey-text text-lighten-4 right"
-            href="https://fortniteapi.io/"
+            href="https://www.themealdb.com/"
             target="_blank"
           >
-            Made with FortniteApi.io
+            Made with TheMealDB
           </a>
         </div>
       </div>

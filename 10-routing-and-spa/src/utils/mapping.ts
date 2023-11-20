@@ -6,3 +6,11 @@ export const MapCategory = (source: IAPICategory): ICategory => {
     desc: source.strCategoryDescription,
   };
 };
+
+export const MapMeal = (source: IAPIMeals): IMeals => {
+  return {
+    id: source.idMeal,
+    name: source.strMeal,
+    image: source.strMealThumb,
+  };
+};

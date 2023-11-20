@@ -1,5 +1,6 @@
 {
-  "name": "08-showcase-project",
+  "name": "10-food-project",
+  "homepage": "https://dsibi.github.io/react-food",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -18,16 +19,19 @@
     "web-vitals": "^2.1.4"
   },
   "devDependencies": {
+    "axios": "^1.6.2",
     "generate-react-cli": "^8.3.0",
+    "gh-pages": "^6.1.0",
     "postcss": "^8.4.31",
-    "react-scripts": "5.0.1",
-    "axios": "^1.6.2"
+    "react-scripts": "5.0.1"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [

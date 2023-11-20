@@ -12,12 +12,7 @@ body {
   padding: 1.5rem 0;
 }
 
-.card {
-  display: flex;
-  flex-direction: column;
-  color: red;
-}
-
-.card-content {
-  flex-grow: 1;
+img,
+iframe {
+  max-width: 100%;
 }

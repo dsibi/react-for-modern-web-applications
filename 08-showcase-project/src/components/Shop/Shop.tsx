@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { API_URL, API_KEY } from "../../config";
 import Preloader from "../Preloader/Preloader";
 import GoodsList from "../GoodsList/GoodsList";

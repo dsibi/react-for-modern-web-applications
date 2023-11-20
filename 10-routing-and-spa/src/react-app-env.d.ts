@@ -22,11 +22,33 @@ interface ICatalog {
   catalog: ICategory[];
 }
 
-const MapCategory = (source: IAPICategory): ICategory => {
-  return {
-    id: source.idCategory,
-    name: source.strCategory,
-    image: source.strCategoryThumb,
-    desc: source.strCategoryDescription,
-  };
-};
+interface IAPICategoryMeals {
+  meals: IAPICategory[];
+}
+
+interface IAPIMeals {
+  strMeal: string;
+  strMealThumb: string;
+  idMeal: string;
+}
+
+interface ICategoryMeals {
+  meals: IMeals[];
+}
+
+interface IMeals {
+  name: string;
+  image: string;
+  id: string;
+}
+
+interface IAPIRecipe {
+  idMeal: string;
+  strMeal: string;
+  strDrinkAlternate: boolean;
+  strCategory: string;
+  strArea: string;
+  strInstructions: string;
+  strMealThumb: string;
+  strYoutube: string;
+}

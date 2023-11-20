@@ -6,19 +6,21 @@ import Home from "./pages/Home/Home";
 import About from "./pages/About/About";
 import Contact from "./pages/Contact/Contact";
 import NotFound from "./pages/NotFound/NotFound";
-import Movie from "./pages/Movie/Movie";
+import Category from "./pages/Category/Category";
+import Recipe from "./pages/Recipe/Recipe";
 
 function App() {
   return (
     <Fragment>
-      <Router>
+      <Router basename="/react-food">
         <Header />
         <main className="container content">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
-            <Route path="/movies/:id" element={<Movie />} />
+            <Route path="/category/:name" element={<Category />} />
+            <Route path="/meal/:id/" element={<Recipe />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </main>
