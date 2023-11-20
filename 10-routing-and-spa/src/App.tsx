@@ -12,7 +12,7 @@ import Recipe from "./pages/Recipe/Recipe";
 function App() {
   return (
     <Fragment>
-      <Router basename="/react-food">
+      <Router basename="/react-for-modern-web-applications">
         <Header />
         <main className="container content">
           <Routes>
