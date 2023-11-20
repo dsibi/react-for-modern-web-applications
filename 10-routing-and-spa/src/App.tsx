@@ -1,5 +1,5 @@
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
-import { Fragment } from "react";
+import { Fragment, Suspense, lazy } from "react";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import Home from "./pages/Home/Home";
@@ -9,6 +9,8 @@ import NotFound from "./pages/NotFound/NotFound";
 import Category from "./pages/Category/Category";
 import Recipe from "./pages/Recipe/Recipe";
 
+// const Home = lazy(() => import("./pages/Home/Home"));
+
 function App() {
   return (
     <Fragment>
@@ -16,7 +18,9 @@ function App() {
         <Header />
         <main className="container content">
           <Routes>
+            {/* <Suspense fallback={<h2>Loading...</h2>}> */}
             <Route path="/" element={<Home />} />
+            {/* </Suspense> */}
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/category/:name" element={<Category />} />
